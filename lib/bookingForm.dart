@@ -101,7 +101,7 @@ class _BookingFormState extends State<BookingForm> {
                 ),
                 Container(
                   width: 150,
-                  margin: EdgeInsets.only(bottom: 330),
+                  margin: EdgeInsets.only(bottom: 0),
                   child: FlatButton(
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
@@ -145,7 +145,7 @@ class _BookingFormState extends State<BookingForm> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                        child: Text('Save'),
+                                        child: Text('Okay'),
                                         onPressed: () {
                                           Navigator.pop(context);
                                         })
