@@ -142,7 +142,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
           ),
-          isLoading
+          isLoading == true
               ? Container(
                   height: double.infinity,
                   width: double.infinity,
