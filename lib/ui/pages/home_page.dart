@@ -14,9 +14,11 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "_name",
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+            BlocBuilder<TextlabelBloc, TextlabelState>(
+              builder: (context, changeTextLabelState) => Text(
+                changeTextLabelState.value.toString(),
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+              ),
             ),
             SizedBox(
               height: 24,
@@ -32,7 +34,11 @@ class HomePage extends StatelessWidget {
               height: 24,
             ),
             RaisedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                context
+                    .bloc<TextlabelBloc>()
+                    .add(ChangeTextLabel(ctrlName.text));
+              },
               color: Colors.blue[600],
               icon: Icon(
                 Icons.add_box,
