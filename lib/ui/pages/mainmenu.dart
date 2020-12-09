@@ -29,17 +29,14 @@ class _MainMenuState extends State<MainMenu> {
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle),
             label: "Add Data",
-            //label att need upgrade
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle),
+            icon: Icon(Icons.list),
             label: "List Data",
-            //label att need upgrade
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle),
+            icon: Icon(Icons.account_circle),
             label: "Account",
-            //label att need upgrade
           ),
         ],
       ),
