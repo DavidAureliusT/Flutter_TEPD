@@ -19,6 +19,12 @@ class _SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
+  void clearForm() {
+    ctrlName.clear();
+    ctrlEmail.clear();
+    ctrlPassword.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,6 +51,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     SizedBox(height: 20),
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
                       controller: ctrlEmail,
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.email),
@@ -97,6 +104,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             );
                             setState(() {
                               isLoading = false;
+                              clearForm();
                             });
                           } else {
                             Fluttertoast.showToast(

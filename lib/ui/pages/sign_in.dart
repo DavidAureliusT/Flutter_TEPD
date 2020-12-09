@@ -37,6 +37,7 @@ class _SignInPageState extends State<SignInPage> {
                   children: <Widget>[
                     SizedBox(height: 20),
                     TextFormField(
+                      keyboardType: TextInputType.emailAddress,
                       controller: ctrlEmail,
                       decoration: InputDecoration(
                           prefixIcon: Icon(Icons.email),
