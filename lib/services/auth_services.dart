@@ -37,4 +37,10 @@ class AuthServices {
     }
     return msg;
   }
+
+  static Future<bool> signOut() async {
+    bool result = false;
+    await auth.signOut().whenComplete(() => result = true);
+    return result;
+  }
 }

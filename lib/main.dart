@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     } else {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MainMenu(),
+        home: SignInPage(),
       );
     }
   }
