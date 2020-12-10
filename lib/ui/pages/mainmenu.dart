@@ -12,6 +12,7 @@ class _MainMenuState extends State<MainMenu> {
     DataPage(),
     AccountPage()
   ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -39,6 +40,9 @@ class _MainMenuState extends State<MainMenu> {
             label: "Account",
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
       ),
     );
   }
