@@ -134,7 +134,7 @@ class _AddPageState extends State<AddPage> {
                             isLoading = true;
                           });
                           Products product = Products(
-                              "", ctrlName.text, ctrlPrice.text,
+                              "", ctrlName.text, int.parse(ctrlPrice.text),
                               image: imageFile.path);
                           bool result = await ProductServices.addProduct(
                               product, imageFile);

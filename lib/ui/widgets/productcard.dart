@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/models/models.dart';
+import 'package:intl/intl.dart';
 
 class ProductCard extends StatelessWidget {
   final Products product;
   ProductCard({this.product});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -21,7 +23,10 @@ class ProductCard extends StatelessWidget {
             style: TextStyle(fontSize: 20),
           ),
         ),
-        subtitle: Text(product.price),
+        subtitle: Text(
+            NumberFormat.currency(locale: 'id', decimalDigits: 0, symbol: 'Rp ')
+                .format(product.price)),
+        // subtitle: Text(product.price),
         title: Text(
           product.name,
           style: TextStyle(fontSize: 20),
