@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,3 +17,4 @@ part "mainmenu.dart";
 part "add_page.dart";
 part "data_page.dart";
 part "account_page.dart";
+part "detail_product_page.dart";

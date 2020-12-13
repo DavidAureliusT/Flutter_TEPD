@@ -20,25 +20,22 @@ class ProductServices {
 
   static Future<bool> addProduct(Products product, PickedFile imageFile) async {
     await Firebase.initializeApp();
-
     productDoc = await productCollection.add({
       'id': "",
       'name': product.name,
       'price': product.price,
       'image': product.image
     });
-
     if (productDoc.id != null) {
       ref = FirebaseStorage.instance
           .ref()
           .child('images')
           .child(productDoc.id + ".png");
       uploadTask = ref.putFile(File(imageFile.path));
-
       await uploadTask.whenComplete(
           () => ref.getDownloadURL().then((value) => imageUrl = value));
       productCollection.doc(productDoc.id).update({
-        'id': product.id,
+        'id': productDoc.id,
         'image': imageUrl,
       });
       return true;
@@ -46,5 +43,22 @@ class ProductServices {
       return false;
     }
   }
-  // static Future<>
+
+  static Future<bool> updateProduct(String id, String name, int price) async {
+    await Firebase.initializeApp();
+    return await productCollection
+        .doc(id)
+        .update({'name': name, 'price': price})
+        .then((value) => true)
+        .catchError((error) => false);
+  }
+
+  static Future<bool> deleteProduct(String id) async {
+    await Firebase.initializeApp();
+    return await productCollection
+        .doc(id)
+        .delete()
+        .then((value) => true)
+        .catchError((error) => false);
+  }
 }

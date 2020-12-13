@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/models/models.dart';
+import 'package:flutter_widgets/ui/pages/pages.dart';
 import 'package:intl/intl.dart';
 
 class ProductCard extends StatelessWidget {
@@ -32,8 +33,13 @@ class ProductCard extends StatelessWidget {
           style: TextStyle(fontSize: 20),
         ),
         onTap: () {
-          //bagian kita membuat detail product
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => DetailProductPage(product: product)));
         },
+        trailing: Icon(
+          Icons.info_outline_rounded,
+          color: Colors.black38,
+        ),
       ),
     );
   }
