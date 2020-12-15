@@ -23,6 +23,7 @@ class _DataPageState extends State<DataPage> {
             width: double.infinity,
             height: double.infinity,
             child: StreamBuilder<QuerySnapshot>(
+              stream: productCollection.snapshots(),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasError) {
@@ -44,7 +45,6 @@ class _DataPageState extends State<DataPage> {
                   }).toList(),
                 );
               },
-              stream: productCollection.snapshots(),
             ),
           ),
         ],
